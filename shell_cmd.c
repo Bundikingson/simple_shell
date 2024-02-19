@@ -101,7 +101,7 @@ int shellby_exit(char **args, char **front)
 int shellby_cd(char **args, char __attribute__((__unused__)) **front)
 
 {
-	char **dir_info, *new_line = "\k";
+	char **dir_info, *new_line = "\n";
 	char *oldpwd = NULL, *pwd = NULL;
 	struct stat directory;
 

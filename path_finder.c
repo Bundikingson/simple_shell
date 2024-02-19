@@ -15,7 +15,7 @@ list_t *get_path_dir(char *path);
 /**
  * get_location - It searches a cmd in the PATH..
  * @command: The cmd to be found..
- * RETURN: full pathname, else NULL, If an error occurs
+ * RWTURN: full pathname, else NULL, If an error occurs
  */
 
 char *get_location(char *command)
@@ -120,28 +120,28 @@ char *fill_path_dir(char *path)
 list_t *get_path_dir(char *path)
 
 {
-	int indx;
-	char **dirs, *path_copy;
-	list_t *head = NULL;
+    int indx;
+    char **dirs, *path_copy;
+    list_t *head = NULL;
 
-	path_copy = fill_path_dir(path);
-	if (!path_copy)
-		return (NULL);
-	dirs = _strtok(path_copy, ":");
-	free(path_copy);
-	if (!dirs)
-		return (NULL);
+    path_copy = fill_path_dir(path);
+    if (!path_copy)
+        return NULL;
+    dirs = _strtok(path_copy, ":");
+    free(path_copy);
+    if (!dirs)
+        return NULL;
 
-	for (indx = 0; dirs[indx]; indx++)
-	{
-		if (add_node_end(&head, dirs[indx]) == NULL)
-		{
-			free_list(head);
-			free(dirs);
-			return (NULL);
-		}
-	}
+    for (indx = 0; dirs[indx]; indx++)
+    {
+        if (add_node_end(&head, dirs[indx]) == NULL)
+        {
+            free_list(head);
+            free(dirs);
+            return NULL;
+        }
+    }
 
-	free(dirs);
-
-	return (head);
+    free(dirs);
+    return head;
+}

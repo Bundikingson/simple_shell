@@ -26,7 +26,7 @@ void *_realloc(void *ptr, size_t older_size, size_t newer_size)
 	char *new_ptr, *content;
 	unsigned int idx;
 
-	if (new_size == old_size)
+	if (newer_size == older_size)
 		return (ptr);
 
 	if (ptr == NULL)
@@ -146,5 +146,3 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 		input = 0;
 	return (output);
 }
-
-

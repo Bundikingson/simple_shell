@@ -12,10 +12,10 @@ void sig_handler(int sig);
 int execute(char **args, char **front);
 
 /**
- * Sig_handler - Outputs a new prompt upon a signal.
+ * sig_handler - Outputs a new prompt upon a signal.
  * @sig: The signal to notify function to print prompt.
  */
-void Sig_handler(int sig)
+void sig_handler(int sig)
 {
 	char *new_prompt = "\n$ ";
 
@@ -31,7 +31,9 @@ void Sig_handler(int sig)
  * Return: exit value of the last executed command
  * else, a corresponding error code on failure.
  */
+
 int execute(char **args, char **front)
+
 {
 	pid_t child_pid;
 	int status, flag = 0, Return_value = 0;
@@ -92,7 +94,9 @@ int execute(char **args, char **front)
  * @argv: Arguments contents.
  * Return: The return value of the last executed command.
  */
+
 int main(int argc, char *argv[])
+
 {
 	extern char **environ;
 	int ret = 0, retn;
@@ -144,7 +148,3 @@ int main(int argc, char *argv[])
 	free_alias_list(aliases);
 	return (*exe_ret);
 }
-
-
-
-

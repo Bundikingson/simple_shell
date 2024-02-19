@@ -97,12 +97,12 @@ int _strncmp(const char *u1, const char *u2, size_t k)
 {
 	size_t input;
 
-	for (input = 0; s1[input] && s2[input] && input < k; input++)
+	for (input = 0; u1[input] && u2[input] && input < k; input++)
 	{
-		if (s1[input] > s2[input])
-			return (s1[input] - s2[input]);
-		else if (s1[input] < s2[input])
-			return (s1[input] - s2[input]);
+		if (u1[input] > u2[input])
+			return (u1[input] - u2[input]);
+		else if (u1[input] < u2[input])
+			return (u1[input] - u2[input]);
 	}
 	if (input == k)
 		return (0);
