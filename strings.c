@@ -27,7 +27,7 @@ int _strlen(const char *u)
 
 	if (!u)
 		return (length);
-	for (length = 0; s[length]; length++)
+	for (length = 0; u[length]; length++)
 		;
 	return (length);
 }
